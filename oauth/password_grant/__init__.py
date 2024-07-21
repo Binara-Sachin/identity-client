@@ -2,6 +2,7 @@
 
 import requests
 import base64
+import constants
 
 def get_token(client_id, client_secret, username, password):
     """
@@ -13,7 +14,7 @@ def get_token(client_id, client_secret, username, password):
     :param password: Password for authentication.
     :return: ID token and access token if successful, else None.
     """
-    url = 'https://localhost:9443/oauth2/token'
+    url = constants.TOKEN_ENDPOINT_URL
 
     # Encode client ID and client secret for the Authorization header
     auth_str = f"{client_id}:{client_secret}"
